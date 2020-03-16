@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XboxCtrlrInput;
 
 public class Objective : MonoBehaviour
 {
@@ -10,14 +11,18 @@ public class Objective : MonoBehaviour
     /// </summary>
     public Slider m_Slider;
 
+    /// <summary>
+    /// Player can interact with the objective.
+    /// </summary>
+    /// <param name="other">Object in the trigger.</param>
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             // Interacting with the objective.
-            if (Input.GetKey(KeyCode.Space))
+            if (XCI.GetButton(XboxButton.A))
             {
-                Debug.Log("Filling");
+                //Debug.Log("Filling");
                 m_Slider.GetComponent<ProgressBar>().IncreaseProgress();
             }
         }
