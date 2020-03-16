@@ -14,8 +14,8 @@ public class Objective : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
                 Debug.Log("Yes");
         }
-        else
-          Debug.Log(m_PlayerInRadius);
+        //else
+          //Debug.Log(m_PlayerInRadius);
     }
 
     private void OnTriggerEnter(Collider other)
