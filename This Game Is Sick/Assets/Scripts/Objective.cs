@@ -9,34 +9,62 @@ public class Objective : MonoBehaviour
     /// <summary>
     /// The slider that is the progress bar.
     /// </summary>
-    public Slider m_Slider;
+    public ProgressBar m_Slider;
 
-    private int[] m_InputSequence = new int[4];
+    private int m_InputPrompt;
 
-    public int m_SequenceSize = 0;
+    private bool m_PromptGenerated = false;
 
+    public float m_MistakeTimer = 0.0f;
+
+    public Image[] m_ButtonPromptImages = new Image[4];
+    
     /// <summary>
     /// Player can interact with the objective.
     /// </summary>
     /// <param name="other">Object in the trigger.</param>
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (m_PromptGenerated)
         {
-            // Interacting with the objective.
-            if (XCI.GetButton(XboxButton.A))
+            if (XCI.GetButtonDown(XboxButton.A) && m_InputPrompt == (int)XboxButton.A)
             {
-                //Debug.Log("Filling");
-                m_Slider.GetComponent<ProgressBar>().IncreaseProgress();
+                m_Slider.IncreaseProgress();
+                GeneratePrompt();
+            }
+            else if (XCI.GetButtonDown(XboxButton.B) && m_InputPrompt == (int)XboxButton.B)
+            {
+                m_Slider.IncreaseProgress();
+                GeneratePrompt();
+            }
+            else if (XCI.GetButtonDown(XboxButton.X) && m_InputPrompt == (int)XboxButton.X)
+            {
+                m_Slider.IncreaseProgress();
+                GeneratePrompt();
+            }
+            else if (XCI.GetButtonDown(XboxButton.Y) && m_InputPrompt == (int)XboxButton.Y)
+            {
+                m_Slider.IncreaseProgress();
+                GeneratePrompt();
+            }
+        }
+        else
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                // Interacting with the objective.
+                if (XCI.GetButton(XboxButton.A))
+                {
+                    GeneratePrompt();
+                    m_PromptGenerated = true;
+                }
             }
         }
     }
 
-    private void GenerateSequence()
+    private void GeneratePrompt()
     {
-        for (int i = 0; i < m_SequenceSize; ++i)
-        {
-
-        }
+        m_InputPrompt = Random.Range(0, 4);
+        Debug.Log(m_InputPrompt);
     }
 }

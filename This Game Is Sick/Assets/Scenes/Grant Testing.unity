@@ -879,6 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 500
+  m_PlayerNumber: 1
 --- !u!1 &1212688462
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +978,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278e277ba6a0ff942a64598efecdd69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Slider: {fileID: 1788598138}
+  m_Slider: {fileID: 1788598139}
+  m_MistakeTimer: 0
+  m_ButtonPromptImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1650145830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1154,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProgressSpeed: 2
-  m_DecreaseSpeed: 1
+  m_DecreaseSpeed: 0.1
 --- !u!1 &1799802826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415186274430599635, guid: 870acf6147230ce45a93f0961d71b68b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7434329786718701225, guid: 870acf6147230ce45a93f0961d71b68b,
         type: 3}
