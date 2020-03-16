@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class Infecter : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            Vector3 pos = gameObject.transform.position;
-            gameObject.transform.position = new Vector3(pos.x -= 1.0f, pos.y, pos.z);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Vector3 pos = gameObject.transform.position;
-            gameObject.transform.position = new Vector3(pos.x += 1.0f, pos.y, pos.z);
-        }
-    }
+    public float m_PushForce = 0;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        GameObject other = collision.gameObject;
+
+        if (other.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().SetInfected(true);
+            other.GetComponent<Rigidbody>().AddForce(transform.forward * m_PushForce);
+            GetComponent<Rigidbody>().AddForce(transform.forward * m_PushForce);
         }
     }
 }
