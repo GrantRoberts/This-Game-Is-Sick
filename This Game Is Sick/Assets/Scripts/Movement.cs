@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     bool m_Infected;
     public float m_Speed;
+    public XboxCtrlrInput.XboxController m_PlayerNumber = (XboxCtrlrInput.XboxController)1;
     Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()
@@ -17,10 +18,20 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+        Vector3 motion;
 
+        if(XboxCtrlrInput.XCI.IsPluggedIn((int)m_PlayerNumber))
+        {
+            motion = new Vector3(XboxCtrlrInput.XCI.GetAxis(XboxCtrlrInput.XboxAxis.LeftStickX, m_PlayerNumber), 0, XboxCtrlrInput.XCI.GetAxis(XboxCtrlrInput.XboxAxis.LeftStickY,m_PlayerNumber));
+        }
+        else
+        {
+         motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
+        }
 
-        Vector3 motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        
+
 
         if (motion.magnitude > 0.0f)
         {
