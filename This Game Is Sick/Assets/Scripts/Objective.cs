@@ -5,18 +5,16 @@ using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
 {
-    private bool m_PlayerInRadius = false;
-
     private float m_Progress = 0.0f;
 
     public float m_ProgressSpeed = 0.0f;
 
     public Slider m_Slider;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerStay(Collider other)
     {
-        if (m_PlayerInRadius)
+        if (other.gameObject.tag == "Player")
         {
             if (Input.GetKey(KeyCode.Space))
             {
@@ -25,17 +23,5 @@ public class Objective : MonoBehaviour
                 m_Slider.value = m_Progress;
             }
         }
-        //else
-          //Debug.Log(m_PlayerInRadius);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        m_PlayerInRadius = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        m_PlayerInRadius = false;
     }
 }
