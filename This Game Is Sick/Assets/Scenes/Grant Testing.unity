@@ -978,7 +978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278e277ba6a0ff942a64598efecdd69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ProgressSpeed: 1
   m_Slider: {fileID: 1788598138}
 --- !u!65 &1650145830
 BoxCollider:
@@ -1076,6 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788598137}
   - component: {fileID: 1788598138}
+  - component: {fileID: 1788598139}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1155,6 +1155,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1788598139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788598136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd0a574c00ef394b84694854f9262e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ProgressSpeed: 2
+  m_DecreaseSpeed: 1
 --- !u!1 &1799802826
 GameObject:
   m_ObjectHideFlags: 0

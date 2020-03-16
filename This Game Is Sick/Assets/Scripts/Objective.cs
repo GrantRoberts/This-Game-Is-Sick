@@ -6,16 +6,6 @@ using UnityEngine.UI;
 public class Objective : MonoBehaviour
 {
     /// <summary>
-    /// Progress of the bar.
-    /// </summary>
-    private float m_Progress = 0.0f;
-
-    /// <summary>
-    /// How fast the progress bar increases.
-    /// </summary>
-    public float m_ProgressSpeed = 0.0f;
-
-    /// <summary>
     /// The slider that is the progress bar.
     /// </summary>
     public Slider m_Slider;
@@ -28,10 +18,7 @@ public class Objective : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 Debug.Log("Filling");
-                // Increase the progress by the speed by delta time.
-                m_Progress += m_ProgressSpeed * Time.deltaTime;
-                // Set the bar's value.
-                m_Slider.value = m_Progress;
+                m_Slider.GetComponent<ProgressBar>().IncreaseProgress();
             }
         }
     }
