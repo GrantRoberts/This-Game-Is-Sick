@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Infecter : MonoBehaviour
 {
-    public float m_PushForce;
+    public float m_PushForce = 0;
 
     private void OnCollisionEnter(Collision collision)
     {
