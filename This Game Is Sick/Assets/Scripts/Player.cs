@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+<<<<<<< Updated upstream
     bool m_Infected;
     // Start is called before the first frame update
     void Start()
@@ -27,4 +28,17 @@ public class Player : MonoBehaviour
     {
         m_Infected = infected;
     }
+=======
+	private void Update()
+	{
+		Debug.Log(m_Infected);
+	}
+
+	public void SetInfected(bool infected)
+	{
+		m_Infected = infected;
+	}
+
+	private bool m_Infected = false;
+>>>>>>> Stashed changes
 }
