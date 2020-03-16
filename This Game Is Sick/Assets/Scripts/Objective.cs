@@ -11,6 +11,10 @@ public class Objective : MonoBehaviour
     /// </summary>
     public Slider m_Slider;
 
+    private int[] m_InputSequence = new int[4];
+
+    public int m_SequenceSize = 0;
+
     /// <summary>
     /// Player can interact with the objective.
     /// </summary>
@@ -25,6 +29,14 @@ public class Objective : MonoBehaviour
                 //Debug.Log("Filling");
                 m_Slider.GetComponent<ProgressBar>().IncreaseProgress();
             }
+        }
+    }
+
+    private void GenerateSequence()
+    {
+        for (int i = 0; i < m_SequenceSize; ++i)
+        {
+
         }
     }
 }
