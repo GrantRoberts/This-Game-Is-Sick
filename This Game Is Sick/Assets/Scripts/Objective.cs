@@ -105,7 +105,6 @@ public class Objective : MonoBehaviour
     /// <param name="other">Other object.</param>
     private void OnTriggerStay(Collider other)
     {
-        // If input has been disabled, don't take any inputs in.
         if (!m_DisableInput)
         {
             // If the player has pressed any buttons.
@@ -119,7 +118,6 @@ public class Objective : MonoBehaviour
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
-                        m_Prompt.gameObject.SetActive(false);
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -167,7 +165,6 @@ public class Objective : MonoBehaviour
     {
         m_InputPrompt = Random.Range(0, 4);
         Debug.Log(m_InputPrompt);
-        m_Prompt.gameObject.SetActive(true);
         m_Prompt.sprite = m_ButtonPromptImages[m_InputPrompt];
     }
 
