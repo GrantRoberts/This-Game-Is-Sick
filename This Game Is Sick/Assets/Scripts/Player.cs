@@ -5,7 +5,22 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     bool m_Infected = false;
-    float m_Health = 0;
+    float m_Health = 1;
+    Material m_Shader;
+
+    private void Awake()
+    {
+        //m_Shader = GetComponentInChildren<Material>();
+        m_Shader = transform.GetChild(0).GetComponent<Renderer>().material;
+       if(m_Shader == null)
+        {
+            Debug.Log("m_Shader is null");
+        }
+        else
+        {
+            Debug.Log("m_Shader is not null");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +31,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //m_Health += 1.0f * Time.deltaTime;
+        m_Shader.SetFloat("Vector1_33F9B192",m_Health);
+        
        
     }
 
@@ -31,7 +48,7 @@ public class Player : MonoBehaviour
 
         if (m_Infected)
         {
-            m_Health = 1;
+            m_Health = 0;
         }
     }
 
@@ -43,6 +60,10 @@ public class Player : MonoBehaviour
         if(m_Health < 0)
         {
             m_Health = 0;
+        }
+        else if(m_Health > 1)
+        {
+            m_Health = 1;
         }
     }
 
