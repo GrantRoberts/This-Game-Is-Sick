@@ -105,6 +105,7 @@ public class Objective : MonoBehaviour
     /// <param name="other">Other object.</param>
     private void OnTriggerStay(Collider other)
     {
+        // If input has been disabled, don't take any inputs in.
         if (!m_DisableInput)
         {
             // If the player has pressed any buttons.
@@ -114,29 +115,11 @@ public class Objective : MonoBehaviour
                 if (m_PromptGenerated)
                 {
                     // Check if the player pressed the button corresponding with the prompt.
-                    // A button.
-                    if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.A)
+                    if ((int)GetFaceButtonPress() == m_InputPrompt)
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
-                    }
-                    // B button.
-                    else if (XCI.GetButtonDown(XboxButton.B, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.B)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
-                    }
-                    // X button.
-                    else if (XCI.GetButtonDown(XboxButton.X, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.X)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
-                    }
-                    // Y button.
-                    else if (XCI.GetButtonDown(XboxButton.Y, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.Y)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
+                        m_Prompt.gameObject.SetActive(false);
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -184,6 +167,7 @@ public class Objective : MonoBehaviour
     {
         m_InputPrompt = Random.Range(0, 4);
         Debug.Log(m_InputPrompt);
+        m_Prompt.gameObject.SetActive(true);
         m_Prompt.sprite = m_ButtonPromptImages[m_InputPrompt];
     }
 
@@ -203,8 +187,28 @@ public class Objective : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Check which button the player has pressed.
+    /// </summary>
+    /// <returns>The button the player has pressed.</returns>
     private XboxButton GetFaceButtonPress()
     {
-        return XboxButton.A;
+        // Check all the face buttons of the controller.
+        // A button.
+        if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer))
+            return XboxButton.A;
+        // B button.
+        else if (XCI.GetButtonDown(XboxButton.B, m_CurrentPlayer))
+            return XboxButton.B;
+        // X button.
+        else if (XCI.GetButtonDown(XboxButton.X, m_CurrentPlayer))
+            return XboxButton.X;
+        // Y button.
+        else if (XCI.GetButtonDown(XboxButton.Y, m_CurrentPlayer))
+            return XboxButton.Y;
+
+        // Return a random button, the player hasn't pressed a face button.
+        else
+            return XboxButton.Start;
     }
 }
