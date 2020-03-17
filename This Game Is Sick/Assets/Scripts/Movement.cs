@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         Vector3 motion;
@@ -39,6 +39,8 @@ public class Movement : MonoBehaviour
             // motion.Normalize();
             //m_Rigidbody.AddForce(motion * m_Speed * Time.deltaTime,ForceMode.VelocityChange);
 
+
+        
             m_Rigidbody.velocity = motion * m_Speed * Time.deltaTime;
         }
         else
