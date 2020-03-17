@@ -33,20 +33,17 @@ public class Movement : MonoBehaviour
         
 
 
-        if (motion.magnitude > 0.0f)
-        {
+        
             m_Rigidbody.transform.localRotation = Quaternion.LookRotation(motion, Vector3.up);
             // motion.Normalize();
-            //m_Rigidbody.AddForce(motion * m_Speed * Time.deltaTime,ForceMode.VelocityChange);
 
+           
+            m_Rigidbody.AddForce(motion * m_Speed * Time.deltaTime,ForceMode.Impulse);
+            
 
-        
-            m_Rigidbody.velocity = motion * m_Speed * Time.deltaTime;
-        }
-        else
-        {
-            m_Rigidbody.velocity = new Vector3(0, 0, 0);
-        }
+         //What We Want it to feel like
+         //m_Rigidbody.velocity = motion * m_Speed * Time.deltaTime;
+      
 
 
         // m_Rigidbody.AddForce(,ForceMode.VelocityChange);
