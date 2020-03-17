@@ -84,7 +84,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _burnProgress: 0.3
+    - _burnProgress: 0.261
     - _metallic: 0
     - _smoothness: 0
     m_Colors:
