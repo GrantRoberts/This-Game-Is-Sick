@@ -20,9 +20,25 @@ public class ProgressBar : MonoBehaviour
     /// </summary>
     public float m_DecreaseSpeed = 0.0f;
 
+    /// <summary>
+    /// If progress has been increased.
+    /// </summary>
     private bool m_ProgressIncreased = false;
 
+    /// <summary>
+    /// The progress slider.
+    /// </summary>
     private Slider m_Slider;
+
+    /// <summary>
+    /// The threshold for the cells to win.
+    /// </summary>
+    public float m_WinCondition = 0.0f;
+
+    /// <summary>
+    /// The win screen for the cells.
+    /// </summary>
+    public GameObject m_CellsWinImage;
 
     private void Awake()
     {
@@ -41,6 +57,13 @@ public class ProgressBar : MonoBehaviour
             }
             else
                 m_ProgressIncreased = false;
+        }
+
+        // Check win condition.
+        if (m_Progress >= m_WinCondition)
+        {
+            m_CellsWinImage.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 
