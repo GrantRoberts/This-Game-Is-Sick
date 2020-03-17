@@ -1313,7 +1313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 423.2}
+  m_AnchoredPosition: {x: 0, y: 479}
   m_SizeDelta: {x: 862.2, y: 23.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &669532595
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1e3cff44e9f2e42bdb4786cfd13ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PushForce: 20
+  m_PushForce: 50
   m_VirusImage: {fileID: 1161587890}
   m_SoundBucket: {fileID: 2038387699}
 --- !u!82 &936146061
