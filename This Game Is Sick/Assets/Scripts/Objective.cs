@@ -39,16 +39,29 @@ public class Objective : MonoBehaviour
     /// <summary>
     /// Images for button prompts.
     /// </summary>
-    public Image[] m_ButtonPromptImages = new Image[4];
+    public Sprite[] m_ButtonPromptImages = new Sprite[4];
 
     /// <summary>
     /// The player in the area.
     /// </summary>
     private XboxController m_CurrentPlayer;
 
+    /// <summary>
+    /// The image prompt on the objective.
+    /// </summary>
+    private Image m_Prompt;
+
+    /// <summary>
+    /// On startup.
+    /// </summary>
     private void Awake()
     {
+        // For resetting the timer.
         m_MistakeTimerMax = m_MistakeTimer;
+
+        // Get the prompt image object.
+        m_Prompt = transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        m_Prompt.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -56,6 +69,8 @@ public class Objective : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        // If input is disabled, a player made a mistake.
+        // Decrease the timer and if the timer reaches 0, reset.
         if (m_DisableInput)
         {
             m_MistakeTimer -= Time.deltaTime;
@@ -74,9 +89,13 @@ public class Objective : MonoBehaviour
     /// <param name="other">Other object.</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (!m_DisableInput)
         {
-            m_CurrentPlayer = other.GetComponent<Movement>().m_PlayerNumber;
+            if (other.gameObject.tag == "Player")
+            {
+                m_CurrentPlayer = other.GetComponent<Movement>().m_PlayerNumber;
+                m_Prompt.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -95,21 +114,25 @@ public class Objective : MonoBehaviour
                 if (m_PromptGenerated)
                 {
                     // Check if the player pressed the button corresponding with the prompt.
+                    // A button.
                     if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.A)
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
                     }
+                    // B button.
                     else if (XCI.GetButtonDown(XboxButton.B, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.B)
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
                     }
+                    // X button.
                     else if (XCI.GetButtonDown(XboxButton.X, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.X)
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
                     }
+                    // Y button.
                     else if (XCI.GetButtonDown(XboxButton.Y, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.Y)
                     {
                         m_Slider.IncreaseProgress();
@@ -120,6 +143,7 @@ public class Objective : MonoBehaviour
                     {
                         m_DisableInput = true;
                         m_PromptGenerated = false;
+                        m_Prompt.gameObject.SetActive(false);
                     }
                 }
                 // If a prompt hasn't been generated, if the player presses the A button, generate a prompt.
@@ -146,7 +170,11 @@ public class Objective : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
             m_PromptGenerated = false;
+            m_Prompt.sprite = m_ButtonPromptImages[0];
+            m_Prompt.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -156,6 +184,7 @@ public class Objective : MonoBehaviour
     {
         m_InputPrompt = Random.Range(0, 4);
         Debug.Log(m_InputPrompt);
+        m_Prompt.sprite = m_ButtonPromptImages[m_InputPrompt];
     }
 
     /// <summary>
@@ -172,5 +201,10 @@ public class Objective : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private XboxButton GetFaceButtonPress()
+    {
+        return XboxButton.A;
     }
 }
