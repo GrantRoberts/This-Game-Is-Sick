@@ -152,7 +152,7 @@ public class Objective : MonoBehaviour
                     if (other.gameObject.tag == "Player")
                     {
                         // Interacting with the objective.
-                        if (XCI.GetButtonDown(XboxButton.A))
+                        if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer))
                         {
                             GeneratePrompt();
                             m_PromptGenerated = true;
@@ -195,7 +195,7 @@ public class Objective : MonoBehaviour
     {
         for (int i = 0; i < 4; ++i)
         {
-            if (XCI.GetButtonDown((XboxButton)i))
+            if (XCI.GetButtonDown((XboxButton)i, m_CurrentPlayer))
             {
                 return true;
             }
