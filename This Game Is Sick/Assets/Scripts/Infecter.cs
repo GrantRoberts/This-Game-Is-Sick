@@ -9,8 +9,21 @@ public class Infecter : MonoBehaviour
     /// </summary>
     public float m_PushForce = 0;
 
+    /// <summary>
+    /// End screen image for the virus.
+    /// </summary>
+    public GameObject m_VirusImage;
 
-   public GameObject m_VirusImage;
+    /// <summary>
+    /// The audio source of the virus.
+    /// </summary>
+    private AudioSource m_AudioSource;
+
+    /// <summary>
+    /// Sound bucket where all the sounds are held.
+    /// </summary>
+    public SoundBucket m_SoundBucket;
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
@@ -18,7 +31,7 @@ public class Infecter : MonoBehaviour
         // Set the player to infected and push them away.
         if (other.tag == "Player")
         {
-
+            // Push the cell and virus's rigidbodies.
             Rigidbody otherR = other.GetComponent<Rigidbody>();
 
             Vector3 direction = otherR.transform.position - transform.position;
@@ -31,6 +44,8 @@ public class Infecter : MonoBehaviour
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             int infectedCount = 0;
 
+            m_AudioSource.clip = m_SoundBucket.m_Sounds[4];
+            m_AudioSource.Play();
 
             if (players != null)
             {
@@ -51,6 +66,7 @@ public class Infecter : MonoBehaviour
                 //virus wins
                 m_VirusImage.SetActive(true);
             }
+
             otherR.AddForce(direction * m_PushForce,ForceMode.Impulse);
             //otherR.velocity += direction * m_PushForce;
             GetComponent<Rigidbody>().AddForce(direction * -m_PushForce, ForceMode.Impulse);

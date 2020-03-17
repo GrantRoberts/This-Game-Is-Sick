@@ -51,6 +51,10 @@ public class Objective : MonoBehaviour
     /// </summary>
     private Image m_Prompt;
 
+    public SoundBucket m_SoundBucket;
+
+    private AudioSource m_AudioSource;
+
     /// <summary>
     /// On startup.
     /// </summary>
@@ -62,6 +66,8 @@ public class Objective : MonoBehaviour
         // Get the prompt image object.
         m_Prompt = transform.GetChild(0).GetChild(0).GetComponent<Image>();
         m_Prompt.gameObject.SetActive(false);
+
+        m_AudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -95,6 +101,8 @@ public class Objective : MonoBehaviour
             {
                 m_CurrentPlayer = other.GetComponent<Movement>().m_PlayerNumber;
                 m_Prompt.gameObject.SetActive(true);
+                m_AudioSource.clip = m_SoundBucket.m_Sounds[0];
+                m_AudioSource.Play();
             }
         }
     }
@@ -118,6 +126,9 @@ public class Objective : MonoBehaviour
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
+                        m_AudioSource.clip = m_SoundBucket.m_Sounds[2];
+                        m_AudioSource.Play();
+
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -125,6 +136,8 @@ public class Objective : MonoBehaviour
                         m_DisableInput = true;
                         m_PromptGenerated = false;
                         m_Prompt.gameObject.SetActive(false);
+                        m_AudioSource.clip = m_SoundBucket.m_Sounds[3];
+                        m_AudioSource.Play();
                     }
                 }
                 // If a prompt hasn't been generated, if the player presses the A button, generate a prompt.
@@ -155,6 +168,11 @@ public class Objective : MonoBehaviour
             m_PromptGenerated = false;
             m_Prompt.sprite = m_ButtonPromptImages[0];
             m_Prompt.gameObject.SetActive(false);
+            if (!m_DisableInput)
+            {
+                m_AudioSource.clip = m_SoundBucket.m_Sounds[1];
+                m_AudioSource.Play();
+            }
         }
     }
 
