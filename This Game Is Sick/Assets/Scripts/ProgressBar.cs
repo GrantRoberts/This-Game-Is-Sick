@@ -33,7 +33,7 @@ public class ProgressBar : MonoBehaviour
     /// <summary>
     /// The threshold for the cells to win.
     /// </summary>
-    public float m_WinCondition;
+    public float m_WinCondition = 0.0f;
 
     /// <summary>
     /// The win screen for the cells.
