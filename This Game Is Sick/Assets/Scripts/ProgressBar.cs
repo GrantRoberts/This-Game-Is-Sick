@@ -20,9 +20,20 @@ public class ProgressBar : MonoBehaviour
     /// </summary>
     public float m_DecreaseSpeed = 0.0f;
 
+    /// <summary>
+    /// If progress has been increased.
+    /// </summary>
     private bool m_ProgressIncreased = false;
 
+    /// <summary>
+    /// The progress slider.
+    /// </summary>
     private Slider m_Slider;
+
+    /// <summary>
+    /// The threshold for the players to win.
+    /// </summary>
+    public float m_WinCondition;
 
     private void Awake()
     {
@@ -41,6 +52,13 @@ public class ProgressBar : MonoBehaviour
             }
             else
                 m_ProgressIncreased = false;
+        }
+
+        // Check win condition.
+        if (m_Progress >= m_WinCondition)
+        {
+            Debug.Log("Survivor's win!");
+            Time.timeScale = 0.0f;
         }
     }
 
