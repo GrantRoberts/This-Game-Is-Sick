@@ -24,6 +24,11 @@ public class Infecter : MonoBehaviour
     /// </summary>
     public SoundBucket m_SoundBucket;
 
+    private void Awake()
+    {
+        m_AudioSource = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
