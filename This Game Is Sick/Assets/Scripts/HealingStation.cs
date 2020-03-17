@@ -35,7 +35,7 @@ public class HealingStation : MonoBehaviour
                     m_Timer = 0;
 
                     //Heal the player
-                    p.SetHealth(p.GetHealth() - m_HealAmount);
+                    p.SetHealth(p.GetHealth() + m_HealAmount);
 
 
                     if(p.GetHealth() <= 0)
