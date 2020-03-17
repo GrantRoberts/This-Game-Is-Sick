@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
 public class EndScreen : MonoBehaviour
 {
+	/// <summary>
+	/// For delaying the timer, so a player doing the qte doens't immedietly skip the end screen.
+	/// </summary>
     public float m_InputDelayTimer = 0.0f;
-
-    public GameObject m_MainMenu;
 
     // Update is called once per frame
     void Update()
@@ -16,8 +18,8 @@ public class EndScreen : MonoBehaviour
         {
             if (AnyButtonPressed())
             {
-                m_MainMenu.SetActive(true);
-                gameObject.SetActive(false);
+				// Load the main menu scene.
+				SceneManager.LoadScene("MainMenu");   
             }
         }
         else
