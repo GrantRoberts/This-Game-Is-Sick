@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VirusMaterial
+  m_Name: CellMaterial
   m_Shader: {fileID: 4800000, guid: a288ca1ac81374e4a9f9eda83ddcff61, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_4969C1FC:
-        m_Texture: {fileID: 2800000, guid: 3cc026c00ce10e24b9d71cb6a974be4a, type: 3}
+        m_Texture: {fileID: 2800000, guid: a620714eb5c0e8f4a969a6f458ba0191, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -77,10 +77,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_234B5E67: 0
-    - Vector1_33F9B192: 1
-    - Vector1_3EDB0633: 0.281
+    - Vector1_33F9B192: 0.211
+    - Vector1_3EDB0633: 0.33
     - Vector1_67E3AA1C: 2.5
-    - Vector1_6F993DDD: 0.458
+    - Vector1_6F993DDD: 0.233
     - Vector1_803CCD5B: 0.015
     - Vector1_E5F4DA04: 0.2
     - Vector1_FDEF0188: 0.746
@@ -110,10 +110,10 @@ Material:
     - _metallic: 0
     - _smoothness: 0
     m_Colors:
-    - Color_251A9A8F: {r: 0.4156863, g: 0.8000001, b: 0.22352943, a: 0}
-    - Color_4233F20D: {r: 0.67058825, g: 0.13725491, b: 0.28235295, a: 1}
-    - Color_6A6FACD3: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0}
-    - Color_B6C38D43: {r: 0.7435797, g: 0.7735849, b: 0.39044136, a: 0}
+    - Color_251A9A8F: {r: 0.10065861, g: 0.735849, b: 0.6936698, a: 0}
+    - Color_4233F20D: {r: 0.16273992, g: 0.13683695, b: 0.7075472, a: 1}
+    - Color_6A6FACD3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_B6C38D43: {r: 0.010590963, g: 0.3207547, b: 0.053749774, a: 0}
     - Color_EEE27DF4: {r: 0.8679245, g: 0.24154496, b: 0.24154496, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
