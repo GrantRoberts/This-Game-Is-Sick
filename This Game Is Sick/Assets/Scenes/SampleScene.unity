@@ -1987,6 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PushForce: 20
+  m_VirusImage: {fileID: 1161587890}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
