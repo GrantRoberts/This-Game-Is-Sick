@@ -27,7 +27,7 @@ public class Infecter : MonoBehaviour
 
             otherR.AddForce(direction * m_PushForce,ForceMode.Impulse);
             //otherR.velocity += direction * m_PushForce;
-            GetComponent<Rigidbody>().AddForce(-direction * m_PushForce, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(direction * -m_PushForce, ForceMode.Impulse);
             //GetComponent<Rigidbody>().velocity += -direction * m_PushForce;
         }
     }
