@@ -33,8 +33,10 @@ public class Movement : MonoBehaviour
         
 
 
-        
-            m_Rigidbody.transform.localRotation = Quaternion.LookRotation(motion, Vector3.up);
+            if(motion.magnitude > 0)
+            {
+                m_Rigidbody.transform.localRotation = Quaternion.LookRotation(motion, Vector3.up);
+            }
             // motion.Normalize();
 
            
