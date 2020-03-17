@@ -16,9 +16,19 @@ public class Infecter : MonoBehaviour
         // Set the player to infected and push them away.
         if (other.tag == "Player")
         {
+
+            Rigidbody otherR = other.GetComponent<Rigidbody>();
+
+            Vector3 direction = otherR.transform.position - transform.position;
+            direction.Normalize();
+
             collision.gameObject.GetComponent<Player>().SetInfected(true);
-            other.GetComponent<Rigidbody>().AddForce(transform.forward * m_PushForce);
-            GetComponent<Rigidbody>().AddForce(transform.forward * m_PushForce);
+
+
+            otherR.AddForce(direction * m_PushForce,ForceMode.Impulse);
+            //otherR.velocity += direction * m_PushForce;
+            GetComponent<Rigidbody>().AddForce(-direction * m_PushForce, ForceMode.Impulse);
+            //GetComponent<Rigidbody>().velocity += -direction * m_PushForce;
         }
     }
 }
