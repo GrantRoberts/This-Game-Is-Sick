@@ -51,6 +51,10 @@ public class Objective : MonoBehaviour
     /// </summary>
     private Image m_Prompt;
 
+    public SoundBucket m_SoundBucket;
+
+    private AudioSource m_AudioSource;
+
     /// <summary>
     /// On startup.
     /// </summary>
@@ -62,6 +66,8 @@ public class Objective : MonoBehaviour
         // Get the prompt image object.
         m_Prompt = transform.GetChild(0).GetChild(0).GetComponent<Image>();
         m_Prompt.gameObject.SetActive(false);
+
+        m_AudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -95,6 +101,8 @@ public class Objective : MonoBehaviour
             {
                 m_CurrentPlayer = other.GetComponent<Movement>().m_PlayerNumber;
                 m_Prompt.gameObject.SetActive(true);
+                m_AudioSource.clip = m_SoundBucket.m_Sounds[0];
+                m_AudioSource.Play();
             }
         }
     }
@@ -114,29 +122,13 @@ public class Objective : MonoBehaviour
                 if (m_PromptGenerated)
                 {
                     // Check if the player pressed the button corresponding with the prompt.
-                    // A button.
-                    if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.A)
+                    if ((int)GetFaceButtonPress() == m_InputPrompt)
                     {
                         m_Slider.IncreaseProgress();
                         GeneratePrompt();
-                    }
-                    // B button.
-                    else if (XCI.GetButtonDown(XboxButton.B, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.B)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
-                    }
-                    // X button.
-                    else if (XCI.GetButtonDown(XboxButton.X, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.X)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
-                    }
-                    // Y button.
-                    else if (XCI.GetButtonDown(XboxButton.Y, m_CurrentPlayer) && m_InputPrompt == (int)XboxButton.Y)
-                    {
-                        m_Slider.IncreaseProgress();
-                        GeneratePrompt();
+                        m_AudioSource.clip = m_SoundBucket.m_Sounds[2];
+                        m_AudioSource.Play();
+
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -144,6 +136,8 @@ public class Objective : MonoBehaviour
                         m_DisableInput = true;
                         m_PromptGenerated = false;
                         m_Prompt.gameObject.SetActive(false);
+                        m_AudioSource.clip = m_SoundBucket.m_Sounds[3];
+                        m_AudioSource.Play();
                     }
                 }
                 // If a prompt hasn't been generated, if the player presses the A button, generate a prompt.
@@ -174,6 +168,11 @@ public class Objective : MonoBehaviour
             m_PromptGenerated = false;
             m_Prompt.sprite = m_ButtonPromptImages[0];
             m_Prompt.gameObject.SetActive(false);
+            if (!m_DisableInput)
+            {
+                m_AudioSource.clip = m_SoundBucket.m_Sounds[1];
+                m_AudioSource.Play();
+            }
         }
     }
 
@@ -203,8 +202,28 @@ public class Objective : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Check which button the player has pressed.
+    /// </summary>
+    /// <returns>The button the player has pressed.</returns>
     private XboxButton GetFaceButtonPress()
     {
-        return XboxButton.A;
+        // Check all the face buttons of the controller.
+        // A button.
+        if (XCI.GetButtonDown(XboxButton.A, m_CurrentPlayer))
+            return XboxButton.A;
+        // B button.
+        else if (XCI.GetButtonDown(XboxButton.B, m_CurrentPlayer))
+            return XboxButton.B;
+        // X button.
+        else if (XCI.GetButtonDown(XboxButton.X, m_CurrentPlayer))
+            return XboxButton.X;
+        // Y button.
+        else if (XCI.GetButtonDown(XboxButton.Y, m_CurrentPlayer))
+            return XboxButton.Y;
+
+        // Return a random button, the player hasn't pressed a face button.
+        else
+            return XboxButton.Start;
     }
 }
