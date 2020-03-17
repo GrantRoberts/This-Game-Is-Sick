@@ -38,7 +38,7 @@ public class ProgressBar : MonoBehaviour
     /// <summary>
     /// The win screen for the cells.
     /// </summary>
-    public RawImage m_CellsWinImage;
+    public GameObject m_CellsWinImage;
 
     private void Awake()
     {
@@ -62,7 +62,7 @@ public class ProgressBar : MonoBehaviour
         // Check win condition.
         if (m_Progress >= m_WinCondition)
         {
-            m_CellsWinImage.gameObject.SetActive(true);
+            m_CellsWinImage.SetActive(true);
             Time.timeScale = 0.0f;
         }
     }
