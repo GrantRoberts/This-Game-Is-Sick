@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8939211482929235559}
   - component: {fileID: 1662758868356852663}
   - component: {fileID: 1662758868356852662}
+  - component: {fileID: 1456685225}
   m_Layer: 0
   m_Name: GroundCircle
   m_TagString: Untagged
@@ -119,7 +120,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7220012887908364987}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.99999964
   m_Height: 3.17
@@ -144,3 +145,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1456685225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220012887908364987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d994c070e2804c4bae3fa4b2c5d18ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HealTime: 3
+  m_HealAmount: 0.3
