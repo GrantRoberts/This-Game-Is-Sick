@@ -107,6 +107,7 @@ public class Objective : MonoBehaviour
                 m_Prompt.gameObject.SetActive(true);
                 m_AudioSource.clip = m_SoundBucket.m_Sounds[0];
                 m_AudioSource.Play();
+                m_Anim.SetBool("Activated", true);
             }
         }
     }
