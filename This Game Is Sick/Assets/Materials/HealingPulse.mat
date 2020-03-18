@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HealingPulse
-  m_Shader: {fileID: -6465566751694194690, guid: bff9aaf4e171f924dac0c447efe06185,
+  m_Shader: {fileID: -6465566751694194690, guid: b408acc202117a941b34c08776837ccc,
     type: 3}
   m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 4
@@ -69,7 +69,7 @@ Material:
     - Vector1_3E626850: 0.77
     - Vector1_AACD4D7B: 0.996
     - Vector1_B3B3A4A1: 0.8355263
-    - Vector1_CFB680D0: 0.5
+    - Vector1_CFB680D0: 0.1
     - Vector1_F6005C6: 0.1
     - _AlphaClip: 0
     - _Blend: 0
@@ -93,9 +93,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_5090376F: {r: 0.8490566, g: 0.21226415, b: 0.5848767, a: 0}
-    - Color_83B62EE9: {r: 0.08152854, g: 0.012726956, b: 0.20754719, a: 0}
-    - Color_D668302: {r: 0.9528302, g: 0.685872, b: 0.20225172, a: 0}
+    - Color_5090376F: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
+    - Color_83B62EE9: {r: 0.004805972, g: 0.07634633, b: 0.33962262, a: 0}
+    - Color_D668302: {r: 0.15294117, g: 0.6637294, b: 0.8666667, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
