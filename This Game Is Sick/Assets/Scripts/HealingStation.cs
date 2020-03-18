@@ -6,12 +6,22 @@ using XboxCtrlrInput;
 public class HealingStation : MonoBehaviour
 {
     float m_Timer = 0.0f;
+    
     public float m_HealTime = 3;
+    
     public float m_HealAmount = 0.3f;
-    // Update is called once per frame
-    void Update()
+
+    private Animator m_Anim;
+
+    private void Awake()
     {
-        
+        m_Anim = GetComponent<Animator>();
+        m_Anim.SetBool("Activated", false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        m_Anim.SetBool("Activated", true);
     }
 
     private void OnTriggerStay(Collider other)
@@ -48,5 +58,10 @@ public class HealingStation : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        m_Anim.SetBool("Activated", false);
     }
 }

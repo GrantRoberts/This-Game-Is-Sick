@@ -55,6 +55,8 @@ public class Objective : MonoBehaviour
 
     private AudioSource m_AudioSource;
 
+    private Animator m_Anim;
+
     /// <summary>
     /// On startup.
     /// </summary>
@@ -68,6 +70,8 @@ public class Objective : MonoBehaviour
         m_Prompt.gameObject.SetActive(false);
 
         m_AudioSource = gameObject.GetComponent<AudioSource>();
+
+        m_Anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -128,7 +132,6 @@ public class Objective : MonoBehaviour
                         GeneratePrompt();
                         m_AudioSource.clip = m_SoundBucket.m_Sounds[2];
                         m_AudioSource.Play();
-
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -138,6 +141,7 @@ public class Objective : MonoBehaviour
                         m_Prompt.gameObject.SetActive(false);
                         m_AudioSource.clip = m_SoundBucket.m_Sounds[3];
                         m_AudioSource.Play();
+                        m_Anim.SetBool("Activated", false);
                     }
                 }
                 // If a prompt hasn't been generated, if the player presses the A button, generate a prompt.
@@ -150,6 +154,7 @@ public class Objective : MonoBehaviour
                         {
                             GeneratePrompt();
                             m_PromptGenerated = true;
+                            m_Anim.SetBool("Activated", true);
                         }
                     }
                 }
@@ -173,6 +178,7 @@ public class Objective : MonoBehaviour
                 m_AudioSource.clip = m_SoundBucket.m_Sounds[1];
                 m_AudioSource.Play();
             }
+            m_Anim.SetBool("Activated", false);
         }
     }
 
