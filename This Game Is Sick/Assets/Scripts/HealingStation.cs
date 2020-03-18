@@ -7,6 +7,7 @@ public class HealingStation : MonoBehaviour
 {
  
     public float m_HealPerSec = 0.3f;
+    Animator m_Anim;
     // Update is called once per frame
     void Update()
     {
