@@ -63,7 +63,6 @@ public class ProgressBar : MonoBehaviour
         if (m_Progress >= m_WinCondition)
         {
             m_CellsWinImage.SetActive(true);
-            Time.timeScale = 0.0f;
         }
     }
 

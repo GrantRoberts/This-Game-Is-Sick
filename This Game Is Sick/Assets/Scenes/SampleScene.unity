@@ -127,6 +127,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1475688576}
     m_Modifications:
+    - target: {fileID: 1456685225, guid: f0515d7d369e5404b8cc2932ff329b30, type: 3}
+      propertyPath: m_HealPerSec
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1662758868301566522, guid: f0515d7d369e5404b8cc2932ff329b30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,6 +846,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1354136947}
     m_Modifications:
+    - target: {fileID: 1456685225, guid: f0515d7d369e5404b8cc2932ff329b30, type: 3}
+      propertyPath: m_HealPerSec
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1662758868301566522, guid: f0515d7d369e5404b8cc2932ff329b30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,8 +948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd0a574c00ef394b84694854f9262e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ProgressSpeed: 1
-  m_DecreaseSpeed: 0.01
+  m_ProgressSpeed: 2
+  m_DecreaseSpeed: 0.05
   m_WinCondition: 1
   m_CellsWinImage: {fileID: 488528563}
 --- !u!114 &628040102
@@ -2531,7 +2539,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1456685225, guid: f0515d7d369e5404b8cc2932ff329b30, type: 3}
       propertyPath: m_HealPerSec
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1662758868301566522, guid: f0515d7d369e5404b8cc2932ff329b30,
         type: 3}
@@ -3084,7 +3092,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
       propertyPath: m_Speed
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1312388259089115020, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
@@ -3238,7 +3246,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
       propertyPath: m_Speed
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2791997644787829474, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
@@ -3387,7 +3395,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
       propertyPath: m_Speed
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2791997644787829474, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
@@ -3531,7 +3539,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 870acf6147230ce45a93f0961d71b68b,
         type: 3}
       propertyPath: m_Speed
-      value: 150
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 1821675350818867631, guid: 870acf6147230ce45a93f0961d71b68b,
         type: 3}
