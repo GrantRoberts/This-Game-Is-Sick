@@ -240,6 +240,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.04366003
       objectReference: {fileID: 0}
+    - target: {fileID: 12589435557502871, guid: a73d0548633489440ac871de421c4ec8,
+        type: 3}
+      propertyPath: m_MistakeTimer
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1301369818629051852, guid: a73d0548633489440ac871de421c4ec8,
         type: 3}
       propertyPath: m_LocalPosition.y
