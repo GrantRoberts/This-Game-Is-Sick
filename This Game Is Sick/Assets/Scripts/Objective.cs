@@ -132,7 +132,6 @@ public class Objective : MonoBehaviour
                         GeneratePrompt();
                         m_AudioSource.clip = m_SoundBucket.m_Sounds[2];
                         m_AudioSource.Play();
-                        m_Anim.SetBool("Activated", true);
                     }
                     // Else the player made a mistake, disable input, the timer will count down in Update.
                     else
@@ -155,6 +154,7 @@ public class Objective : MonoBehaviour
                         {
                             GeneratePrompt();
                             m_PromptGenerated = true;
+                            m_Anim.SetBool("Activated", true);
                         }
                     }
                 }
