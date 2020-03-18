@@ -107,6 +107,7 @@ public class Objective : MonoBehaviour
                 m_Prompt.gameObject.SetActive(true);
                 m_AudioSource.clip = m_SoundBucket.m_Sounds[0];
                 m_AudioSource.Play();
+                m_Anim.SetBool("Activated", true);
             }
         }
     }
@@ -154,7 +155,6 @@ public class Objective : MonoBehaviour
                         {
                             GeneratePrompt();
                             m_PromptGenerated = true;
-                            m_Anim.SetBool("Activated", true);
                         }
                     }
                 }
