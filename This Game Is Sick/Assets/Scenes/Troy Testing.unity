@@ -464,7 +464,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2791997644787829474, guid: 4baefdaaf112e1141b7ba31ee42a574a,
         type: 3}
@@ -659,13 +659,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630884954}
-  m_LocalRotation: {x: 0.2532059, y: -0, z: -0, w: 0.9674125}
-  m_LocalPosition: {x: 0, y: 6.09, z: -10}
+  m_LocalRotation: {x: 0.7575995, y: -0, z: -0, w: 0.65271974}
+  m_LocalPosition: {x: 1.81, y: 8.45, z: 2.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 29.335001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 98.50598, y: -0.000015258789, z: -0.000015258789}
 --- !u!1001 &648337848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 1312388259089115020, guid: 870acf6147230ce45a93f0961d71b68b,
         type: 3}
       propertyPath: m_Speed
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2791997644787829474, guid: 870acf6147230ce45a93f0961d71b68b,
         type: 3}
@@ -1096,6 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PushForce: 20
   m_VirusImage: {fileID: 0}
+  m_SoundBucket: {fileID: 0}
 --- !u!1 &1174147024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,8 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d994c070e2804c4bae3fa4b2c5d18ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HealTime: 3
-  m_HealAmount: 0.3
+  m_HealPerSec: 0.3
 --- !u!65 &1174147026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1308,6 +1308,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_SoundBucket: {fileID: 0}
 --- !u!65 &1650145830
 BoxCollider:
   m_ObjectHideFlags: 0

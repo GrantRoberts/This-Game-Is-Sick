@@ -155,7 +155,6 @@ public class Objective : MonoBehaviour
                         {
                             GeneratePrompt();
                             m_PromptGenerated = true;
-                            m_Anim.SetBool("Activated", true);
                         }
                     }
                 }
