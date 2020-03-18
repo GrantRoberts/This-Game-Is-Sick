@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HealTime: 3
-  m_HealAmount: 0.1
+  m_HealAmount: 0.3
 --- !u!1001 &302696289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HealTime: 3
-  m_HealAmount: 0.1
+  m_HealAmount: 0.3
 --- !u!136 &390628488
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 488528567}
   - component: {fileID: 488528566}
   - component: {fileID: 488528565}
+  - component: {fileID: 488528568}
   m_Layer: 0
   m_Name: CellsWin
   m_TagString: Untagged
@@ -742,6 +743,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &488528568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488528563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29d8c4c3086ed4eb60d47af66c815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InputDelayTimer: 2
 --- !u!1001 &509225852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -873,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HealTime: 3
-  m_HealAmount: 0.1
+  m_HealAmount: 0.3
 --- !u!136 &543427597
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1633,6 +1647,7 @@ GameObject:
   - component: {fileID: 1161587894}
   - component: {fileID: 1161587893}
   - component: {fileID: 1161587892}
+  - component: {fileID: 1161587895}
   m_Layer: 0
   m_Name: VirusWins
   m_TagString: Untagged
@@ -1744,6 +1759,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1161587895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161587890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29d8c4c3086ed4eb60d47af66c815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InputDelayTimer: 2
 --- !u!4 &1180441496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 969829705939437527, guid: fad1eec24051bd5499e79a450aad79a4,
@@ -2588,7 +2616,6 @@ GameObject:
   - component: {fileID: 1964794100}
   - component: {fileID: 1964794099}
   - component: {fileID: 1964794098}
-  - component: {fileID: 1964794102}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2676,19 +2703,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1964794102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964794097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae29d8c4c3086ed4eb60d47af66c815b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InputDelayTimer: 2
 --- !u!1 &2022069059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 969829705939437530, guid: fad1eec24051bd5499e79a450aad79a4,
