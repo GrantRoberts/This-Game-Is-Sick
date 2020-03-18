@@ -67,7 +67,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1312388259089115020
 MonoBehaviour:
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad297618eb2d4e54697cde9534582a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 500
+  m_Speed: 150
   m_PlayerNumber: 1
 --- !u!222 &7999015087372755898
 CanvasRenderer:

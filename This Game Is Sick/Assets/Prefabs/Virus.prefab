@@ -55,7 +55,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1312388259089115020
 MonoBehaviour:
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad297618eb2d4e54697cde9534582a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 500
+  m_Speed: 210
   m_PlayerNumber: 1
 --- !u!222 &7999015087372755898
 CanvasRenderer:
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PushForce: 20
   m_VirusImage: {fileID: 0}
+  m_SoundBucket: {fileID: 0}
 --- !u!1001 &3254796289970942475
 PrefabInstance:
   m_ObjectHideFlags: 0
