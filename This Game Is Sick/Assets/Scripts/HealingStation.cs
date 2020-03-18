@@ -21,7 +21,8 @@ public class HealingStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        m_Anim.SetBool("Activated", true);
+        if (other.gameObject.tag == "Player")
+            m_Anim.SetBool("Activated", true);
     }
 
     private void OnTriggerStay(Collider other)
