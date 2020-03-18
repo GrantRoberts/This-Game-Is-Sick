@@ -10,7 +10,14 @@ public class HealingStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_Anim = GetComponent<Animator>();
+        m_Anim.SetBool("Activated", false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+            m_Anim.SetBool("Activated", true);
     }
 
     private void OnTriggerStay(Collider other)
@@ -39,5 +46,10 @@ public class HealingStation : MonoBehaviour
                 
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        m_Anim.SetBool("Activated", false);
     }
 }
