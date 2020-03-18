@@ -37,13 +37,13 @@ public class HealingStation : MonoBehaviour
                     p.SetHealth(p.GetHealth() + m_HealPerSec * Time.deltaTime);
 
 
-                    if(p.GetHealth() <= 0)
+                    if(p.GetHealth() >= 1.0f)
                     {
                         p.SetInfected(false);
                         Debug.Log("No longer infected");
                     }
                     //log the health
-                    Debug.Log(p.GetHealth());
+                    Debug.Log(p.GetInfected());
                 
             }
         }
