@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 4352987566195626755}
   - component: {fileID: 6302172201123921619}
   - component: {fileID: 6302172201123921618}
+  - component: {fileID: 12589435557502871}
   m_Layer: 0
   m_Name: GroundCircle
   m_TagString: Untagged
@@ -286,6 +287,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &12589435557502871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617784544465151967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e277ba6a0ff942a64598efecdd69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Slider: {fileID: 0}
+  m_MistakeTimer: 0
+  m_ButtonPromptImages:
+  - {fileID: 21300000, guid: f3dd67a76ed3c11419d4293982b4c512, type: 3}
+  - {fileID: 21300000, guid: e1df724068cf5094db3b95ff49aa353a, type: 3}
+  - {fileID: 21300000, guid: 941fa772a99551946a1017519f41bf50, type: 3}
+  - {fileID: 21300000, guid: 51442a92fe22bad4e88b5a379260d9d5, type: 3}
+  m_SoundBucket: {fileID: 0}
 --- !u!1 &6302172201149892447
 GameObject:
   m_ObjectHideFlags: 0

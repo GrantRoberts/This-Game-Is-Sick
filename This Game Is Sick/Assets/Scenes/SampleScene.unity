@@ -356,6 +356,21 @@ PrefabInstance:
       propertyPath: m_Slider
       value: 
       objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_SoundBucket
+      value: 
+      objectReference: {fileID: 2038387699}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_Slider
+      value: 
+      objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_MistakeTimer
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 969829705939437527, guid: fad1eec24051bd5499e79a450aad79a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,6 +733,21 @@ PrefabInstance:
       propertyPath: m_Slider
       value: 
       objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_SoundBucket
+      value: 
+      objectReference: {fileID: 2038387699}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_Slider
+      value: 
+      objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_MistakeTimer
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 969829705939437527, guid: fad1eec24051bd5499e79a450aad79a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,6 +1033,21 @@ PrefabInstance:
       propertyPath: m_Slider
       value: 
       objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_SoundBucket
+      value: 
+      objectReference: {fileID: 2038387699}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_Slider
+      value: 
+      objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_MistakeTimer
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 969829705939437527, guid: fad1eec24051bd5499e79a450aad79a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1662,6 +1707,21 @@ PrefabInstance:
       propertyPath: m_Slider
       value: 
       objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_SoundBucket
+      value: 
+      objectReference: {fileID: 2038387699}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_Slider
+      value: 
+      objectReference: {fileID: 628040101}
+    - target: {fileID: 123664047624120826, guid: fad1eec24051bd5499e79a450aad79a4,
+        type: 3}
+      propertyPath: m_MistakeTimer
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 969829705939437527, guid: fad1eec24051bd5499e79a450aad79a4,
         type: 3}
       propertyPath: m_LocalPosition.x

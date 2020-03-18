@@ -55,7 +55,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1312388259089115020
 MonoBehaviour:
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PushForce: 20
   m_VirusImage: {fileID: 0}
+  m_SoundBucket: {fileID: 0}
 --- !u!1001 &3254796289970942475
 PrefabInstance:
   m_ObjectHideFlags: 0
