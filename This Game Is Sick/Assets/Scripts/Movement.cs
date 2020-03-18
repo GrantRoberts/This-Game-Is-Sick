@@ -42,13 +42,6 @@ public class Movement : MonoBehaviour
            
             m_Rigidbody.AddForce(motion * m_Speed * Time.deltaTime,ForceMode.Impulse);
             
-
-         //What We Want it to feel like
-         //m_Rigidbody.velocity = motion * m_Speed * Time.deltaTime;
-      
-
-
-        // m_Rigidbody.AddForce(,ForceMode.VelocityChange);
     }
 
 }
